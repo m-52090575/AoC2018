@@ -1,5 +1,6 @@
 import Data.List (scanl)
 import qualified Data.Set as Set
+import Data.Char (isDigit, digitToInt)
 
 main = do
     let file = "input"
