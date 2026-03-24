@@ -7,7 +7,7 @@ main = do
     contents <- readFile file
     let linesOfFile = lines contents
     -- print "Final frequency is:"
-    -- print (sum (listToInt lines))
+    -- print (sum (listToInt linesOfFile))
     print "First duplicate frequency is:"
     print (firstDupInt (listToInt linesOfFile))
 
