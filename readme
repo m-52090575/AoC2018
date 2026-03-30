@@ -1,0 +1,9 @@
+Compile and run the C program:
+
+$ gcc -g -Wall -Wextra -o day1part1 day1part1.c
+$ ./day1part1
+
+
+Compile and run the Haskell program:
+$ ghci day1part2.hs
+*Main> main
