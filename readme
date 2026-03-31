@@ -4,6 +4,6 @@ $ gcc -g -Wall -Wextra -o day1part1 day1part1.c
 $ ./day1part1
 
 
-Run the Haskell program:
-$ ghci day1part2.hs
-*Main> main
+Compile and run the Haskell program:
+$ ghc day1part2.hs
+$ ./day1part2
