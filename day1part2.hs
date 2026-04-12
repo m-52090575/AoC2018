@@ -17,7 +17,7 @@ main = do
 listToInt lines = map num lines
     where num = \x -> getNumToken 0 x
 
-runningTotal list = scanl (+) 0 (list)
+runningTotal list = scanl (+) 0 list
 
 getNumToken accum [] = accum
 getNumToken accum (c:more)
