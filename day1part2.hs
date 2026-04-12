@@ -3,7 +3,7 @@ import qualified Data.Set as Set
 import Data.Char (isDigit, digitToInt)
 
 main = do
-    let file = "input-2"
+    let file = "input"
     contents <- readFile file
     let linesOfFile = lines contents
     -- print "Final frequency is:"
