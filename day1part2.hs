@@ -4,20 +4,31 @@ import Data.Char (isDigit, digitToInt)
 
 main = do
     let file = "input-2"
-    --let file = "input"
     contents <- readFile file
     let linesOfFile = lines contents
-    print "Final frequency is:"
-    print (sum (listToInt linesOfFile))
-    print "Running total:"
-    print (runningTotal (listToInt linesOfFile))
-    --print "First duplicate frequency is:"
-    --print (firstDupInt (listToInt linesOfFile))
+    -- print "Final frequency is:"
+    -- print (sum (listToInt linesOfFile))
+    print "First duplicate frequency is:"
+    print (firstDupInt (listToInt linesOfFile))
 
 listToInt lines = map num lines
     where num = \x -> getNumToken 0 x
 
-runningTotal list = scanl (+) 0 list
+runningTotal list = scanl (+) 0 (take (200*length list) (cycle list))
+firstDupInt list = dupString (runningTotal list)
+
+dupString :: (Ord a, Show a) => [a] -> [Char]
+dupString x =
+    case dup x of
+        Just x -> "First dup int is " ++ (show x)
+        Nothing -> "No dup"
+
+dup :: Ord a => [a] -> Maybe a
+dup xs = dup' xs Set.empty
+    where dup' [] _ = Nothing
+          dup' (x:xs) s = if Set.member x s
+                        then Just x
+                        else dup' xs (Set.insert x s)
 
 getNumToken accum [] = accum
 getNumToken accum (c:more)
